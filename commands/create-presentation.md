@@ -149,9 +149,10 @@ additional_requirements: ...
      ```
 
 3. **Determine slide count**
-   - What: Calculate appropriate number of slides
+   - What: Calculate appropriate number of slides (content slides + title + closing)
    - How: Use formula: 1 title + (number of main themes × 2-3) + 1 closing
-   - Output: Specific number (e.g., "12 slides")
+   - Output: Specific number (e.g., "10 content slides + title + closing = 12 total slides")
+   - **IMPORTANT:** When user specifies slide count, they typically mean content slides only. Always add title slide at beginning and thank you/closing slide at end.
    - Note: If slide_count in config is a number, use that instead
    - Typical range: 5-20 slides
 
@@ -340,6 +341,9 @@ Total slides: [number]
 - ✅ Create clear visual hierarchy through size, weight, and color
 - ✅ Ensure readability: strong contrast, appropriately sized text, clean alignment
 - ✅ Be consistent: repeat patterns, spacing, and visual language across slides
+- ✅ **Avoid text overlap:** Ensure sufficient spacing between all text elements and visual components
+- ✅ **Prevent clutter:** Use white space strategically; less is more
+- ✅ **Modern visual representation:** Research current design trends using web search before designing
 
 ### Color Palette Selection
 
@@ -379,12 +383,14 @@ Total slides: [number]
 ### Visual Details Options
 
 **Geometric Patterns:**
+- **Diverse shapes:** Use circles, hexagons, triangles, rounded rectangles, organic curves—NOT just squares
 - Diagonal section dividers instead of horizontal
 - Asymmetric column widths (30/70, 40/60, 25/75)
 - Rotated text headers at 90° or 270°
 - Circular/hexagonal frames for images
 - Triangular accent shapes in corners
-- Overlapping shapes for depth
+- Overlapping shapes for depth (ensure no text overlap)
+- Organic, flowing shapes for modern, sleek appearance
 
 **Border & Frame Treatments:**
 - Thick single-color borders (10-20pt) on one side only
@@ -412,12 +418,14 @@ Total slides: [number]
 - Oversized numbers for key metrics
 
 **Layout Innovations:**
-- Full-bleed images with text overlays
+- Full-bleed images with text overlays (ensure text has sufficient contrast/background)
 - Sidebar column (20-30% width) for navigation/context
 - Modular grid systems (3×3, 4×4 blocks)
 - Z-pattern or F-pattern content flow
-- Floating text boxes over colored shapes
+- Floating text boxes over colored shapes (with adequate padding to prevent overlap)
 - Magazine-style multi-column layouts
+- **Modern sleek layouts:** Generous white space, minimal elements per slide, bold typography
+- **Avoid clutter:** Maximum 3-5 visual elements per slide (text blocks, images, shapes combined)
 
 **Background Treatments:**
 - Solid color blocks occupying 40-60% of slide
@@ -433,6 +441,25 @@ Total slides: [number]
 - **Two-column layout (PREFERRED):** Use a header spanning the full width, then two columns below - text/bullets in one column and the featured content in the other. This provides better balance and makes charts/tables more readable. Use flexbox with unequal column widths (e.g., 40%/60% split) to optimize space for each content type.
 - **Full-slide layout:** Let the featured content (chart/table) take up the entire slide for maximum impact and readability
 - **NEVER vertically stack:** Do not place charts/tables below text in a single column - this causes poor readability and layout issues
+
+### Modern Visual Representation
+
+**CRITICAL: Research before designing**
+- Use `search_web` to find "modern presentation design trends 2024" or "sleek slide design examples"
+- Study current visual representation styles for your specific topic/industry
+- Identify contemporary design patterns that match your content
+
+**Visual representation diversity:**
+- **Icons and illustrations:** Use simple, modern icons instead of text-heavy slides
+- **Data visualization:** Infographics, pictograms, isometric illustrations
+- **Shape variety:** Circles for processes, hexagons for networks, triangles for hierarchies, organic shapes for creativity
+- **NOT just rectangles:** Avoid default square/rectangular boxes for everything
+
+**Spacing and overlap prevention:**
+- Minimum 20pt padding between text and shapes
+- Minimum 30pt margins from slide edges
+- Test all text lengths to ensure no overflow or overlap
+- Use bounding boxes to verify element spacing
 
 ---
 
