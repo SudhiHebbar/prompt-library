@@ -123,13 +123,14 @@ research_required: true|false
 additional_requirements: ...
 ```
 
-**SUCCESS CRITERIA:**
-- [ ] All questions answered with specific, clear responses
-- [ ] No ambiguous or "TBD" answers remain
-- [ ] User has confirmed the update scope is correct
-- [ ] Responses stored in memory as TOON structure
-- [ ] File paths validated (exist and accessible)
-- [ ] Slide selection is clear and specific
+**TODO CHECKLIST:**
+- [ ] Ask all 7 parameter questions
+- [ ] Clarify any unclear or incomplete responses
+- [ ] Store all responses in memory as TOON structure
+- [ ] Validate presentation file exists and is accessible
+- [ ] Validate slide selection is clear and specific
+- [ ] Present summary to user for confirmation
+- [ ] Wait for user approval before proceeding to Phase 1
 
 **VALIDATION:** 
 1. Review in-memory TOON structure and confirm all required fields are populated with specific information
@@ -232,13 +233,14 @@ Total slides to update: [count]
 - **Branding Changes:** [yes|no]
 ```
 
-**SUCCESS CRITERIA:**
-- [ ] Presentation content extracted
-- [ ] Thumbnails generated
-- [ ] Total slide count determined
-- [ ] Slides to update identified and validated
-- [ ] Current design analyzed
-- [ ] Presentation analysis document created
+**TODO CHECKLIST:**
+- [ ] Extract presentation content to markdown
+- [ ] Generate visual thumbnails of all slides
+- [ ] Count total slides in presentation
+- [ ] Parse and validate slide selection
+- [ ] Analyze current design (colors, fonts, layouts)
+- [ ] Store presentation analysis in memory as TOON structure
+- [ ] Validate: All selected slides exist, analysis is complete
 
 **VALIDATION:** Review in-memory presentation analysis TOON structure and verify it contains accurate information about the presentation and clear list of slides to update.
 
@@ -332,13 +334,14 @@ Total slides to update: [count]
    - How: Use structure above, include all slides needing updated information
    - Output: In-memory TOON structure
 
-**SUCCESS CRITERIA:**
-- [ ] Research topics identified
-- [ ] 3-5 research queries generated
-- [ ] All queries searched
-- [ ] Current information extracted from results
-- [ ] Findings mapped to specific slides
-- [ ] Research summary saved to file
+**TODO CHECKLIST:**
+- [ ] Identify research topics from update requirements
+- [ ] Generate 3-5 research queries for current information
+- [ ] Execute web searches for all queries
+- [ ] Extract updated facts, statistics, and examples
+- [ ] Map findings to specific slides needing updates
+- [ ] Store research summary in memory as TOON structure
+- [ ] Validate: Each slide has current data with sources
 
 **VALIDATION:** Review in-memory research summary TOON structure and verify it contains specific, current information with sources for each slide needing updates.
 
@@ -433,13 +436,13 @@ Total slides to update: [count]
 - [Description of layout modifications]
 ```
 
-**SUCCESS CRITERIA:**
-- [ ] All slides to update have detailed change specifications
-- [ ] New content is specific (not vague or placeholder)
-- [ ] Research findings incorporated (if applicable)
-- [ ] Design changes specified (if applicable)
-- [ ] Rationale provided for major changes
-- [ ] Update plan document created
+**TODO CHECKLIST:**
+- [ ] Review update requirements from in-memory config
+- [ ] Define exact changes for each slide to update
+- [ ] Specify content changes (text/data modifications)
+- [ ] Specify design changes (if applicable)
+- [ ] Store update plan in memory as TOON structure
+- [ ] Validate: Every slide has clear, actionable specifications
 
 **VALIDATION:** Review in-memory update plan TOON structure and verify every slide has clear, actionable change specifications with specific new content.
 
@@ -520,13 +523,14 @@ slide-3:
   notes: What changed and why
 ```
 
-**SUCCESS CRITERIA:**
-- [ ] Updated content created for all slides in update plan
-- [ ] Content is specific and complete (no placeholders)
-- [ ] Research findings integrated (if applicable)
-- [ ] Style matches original presentation
-- [ ] Content follows best practices
-- [ ] Updated content stored in memory as TOON structure
+**TODO CHECKLIST:**
+- [ ] Create TOON structure for all slides being updated
+- [ ] Generate new content for each slide (titles, bullets, text)
+- [ ] Integrate research findings into content
+- [ ] Match tone and style of original presentation
+- [ ] Apply content guidelines (3-5 bullets, specific data)
+- [ ] Store updated content in memory as TOON structure
+- [ ] Validate: No placeholders, content aligns with update plan
 
 **VALIDATION:** Review in-memory TOON structure and verify:
 - Every slide to update has new content
@@ -620,20 +624,18 @@ slide-3:
    - How: Run: `python ooxml/scripts/pack.py unpacked/ output.pptx`
    - Output: output.pptx with updates applied
 
-**SUCCESS CRITERIA:**
-- [ ] Presentation unpacked successfully
-- [ ] All slide XML files identified
-- [ ] Content updates applied to XML
-- [ ] Design updates applied (if applicable)
-- [ ] XML validation passed
-- [ ] Presentation repacked successfully
-- [ ] output.pptx file created
+**TODO CHECKLIST:**
+- [ ] Unpack presentation to access XML files
+- [ ] Identify slide XML files for slides to update
+- [ ] Edit XML files with new content from in-memory TOON
+- [ ] Validate XML structure is correct
+- [ ] Repack XML files into output.pptx
+- [ ] Validate: File opens without errors
 
 **VALIDATION:** Open output.pptx in PowerPoint/LibreOffice and verify:
 - File opens without errors
 - Updated slides show new content
 - Unchanged slides remain intact
-- No formatting corruption
 
 ---
 
@@ -706,13 +708,13 @@ slide-3:
    - How: Continue until all issues resolved
    - Output: Final validated presentation
 
-**SUCCESS CRITERIA:**
-- [ ] Updated thumbnails generated
-- [ ] All planned updates verified in presentation
-- [ ] No visual issues (text cutoff, overlap, etc.)
-- [ ] Unchanged slides remain intact
-- [ ] Professional appearance maintained
-- [ ] All content accurate
+**TODO CHECKLIST:**
+- [ ] Generate thumbnails of current and updated slides
+- [ ] Compare before/after thumbnails
+- [ ] Review for visual issues (text cutoff, overlap, contrast)
+- [ ] Verify all planned updates were applied correctly
+- [ ] Document and fix any issues found
+- [ ] Validate: Professional appearance, all changes applied
 
 **VALIDATION:** Review final thumbnails and open output.pptx to confirm all updates are correct and presentation meets quality standards.
 
@@ -819,12 +821,13 @@ slide-3:
 - Replace original file or save with new name as preferred
 ```
 
-**SUCCESS CRITERIA:**
-- [ ] All deliverables verified
-- [ ] Update summary created
-- [ ] Change log documented
-- [ ] User informed of completion
-- [ ] Instructions provided
+**TODO CHECKLIST:**
+- [ ] Verify all deliverables exist (output.pptx, thumbnails, in-memory structures)
+- [ ] Create update summary with changes made
+- [ ] Document change log for each updated slide
+- [ ] Present completion message to user
+- [ ] Provide next steps instructions
+- [ ] Confirm user can open output.pptx successfully
 
 **VALIDATION:** User confirms receipt of output.pptx and can open it successfully. User reviews changes and confirms they meet requirements.
 

@@ -106,12 +106,13 @@ context: ...
 additional_requirements: ...
 ```
 
-**SUCCESS CRITERIA:**
-- [ ] All questions answered with specific, clear responses
-- [ ] No ambiguous or "TBD" answers remain
-- [ ] User has confirmed the scope is correct
-- [ ] Responses stored in memory as TOON structure
-- [ ] File paths validated (exist and accessible)
+**TODO CHECKLIST:**
+- [ ] Ask all 7 parameter questions
+- [ ] Clarify any unclear or incomplete responses
+- [ ] Store all responses in memory as TOON structure
+- [ ] Validate file paths (if provided)
+- [ ] Present summary to user for confirmation
+- [ ] Wait for user approval before proceeding to Phase 1
 
 **VALIDATION:** 
 1. Review in-memory TOON structure and confirm all required fields are populated with specific information
@@ -216,12 +217,13 @@ Total slides: [number]
 [Context from config]
 ```
 
-**SUCCESS CRITERIA:**
-- [ ] Content source read and analyzed
-- [ ] Slide count determined (specific number)
-- [ ] All slides have defined purpose
-- [ ] Content scope document created
-- [ ] All themes and requirements identified
+**TODO CHECKLIST:**
+- [ ] Read content source (file or free text)
+- [ ] Extract key information and themes
+- [ ] Determine slide count (content + title + closing)
+- [ ] Create slide breakdown with purpose for each slide
+- [ ] Store content scope in memory as TOON structure
+- [ ] Validate: All slides have specific purpose, count is reasonable (5-20)
 
 **VALIDATION:** Review in-memory content scope TOON structure and verify it contains all required sections with specific, actionable information. Confirm slide count is reasonable (5-20 range).
 
@@ -309,13 +311,13 @@ Total slides: [number]
    - How: Use structure above, include all themes from content scope
    - Output: In-memory TOON structure
 
-**SUCCESS CRITERIA:**
-- [ ] 3-5 research queries generated
-- [ ] All queries searched
-- [ ] Key information extracted from results
-- [ ] Findings organized by theme
-- [ ] Research summary saved to file
-- [ ] Each theme has supporting data/examples
+**TODO CHECKLIST:**
+- [ ] Generate 3-5 research queries based on topic
+- [ ] Execute web searches for all queries
+- [ ] Extract key facts, statistics, and examples from results
+- [ ] Synthesize findings organized by theme
+- [ ] Store research summary in memory as TOON structure
+- [ ] Validate: Each theme has specific data with sources cited
 
 **VALIDATION:** Review in-memory research summary TOON structure and verify it contains specific facts, statistics, and examples for each theme identified in content scope. Ensure sources are cited.
 
@@ -334,16 +336,16 @@ Total slides: [number]
 4. **State your approach:** Explain your design choices before implementing
 
 **Requirements:**
-- ✅ State your content-informed design approach BEFORE creating slides
-- ✅ **Avoid cookie-cutter styles:** No generic corporate templates, predictable color schemes, or overused font pairings
-- ✅ Use web-safe fonts only: Arial, Helvetica, Times New Roman, Georgia, Courier New, Verdana, Tahoma, Trebuchet MS, Impact
-- ✅ **Mix fonts creatively:** Combine serif + sans-serif, or use size/weight contrast instead of different fonts
-- ✅ Create clear visual hierarchy through size, weight, and color
-- ✅ Ensure readability: strong contrast, appropriately sized text, clean alignment
-- ✅ Be consistent: repeat patterns, spacing, and visual language across slides
-- ✅ **Avoid text overlap:** Ensure sufficient spacing between all text elements and visual components
-- ✅ **Prevent clutter:** Use white space strategically; less is more
-- ✅ **Modern visual representation:** Research current design trends using web search before designing
+- State your content-informed design approach BEFORE creating slides
+- **Avoid cookie-cutter styles:** No generic corporate templates, predictable color schemes, or overused font pairings
+- Use web-safe fonts only: Arial, Helvetica, Times New Roman, Georgia, Courier New, Verdana, Tahoma, Trebuchet MS, Impact
+- **Mix fonts creatively:** Combine serif + sans-serif, or use size/weight contrast instead of different fonts
+- Create clear visual hierarchy through size, weight, and color
+- Ensure readability: strong contrast, appropriately sized text, clean alignment
+- Be consistent: repeat patterns, spacing, and visual language across slides
+- **Avoid text overlap:** Ensure sufficient spacing between all text elements and visual components
+- **Prevent clutter:** Use white space strategically; less is more
+- **Modern visual representation:** Research current design trends using web search before designing
 
 ### Color Palette Selection
 
@@ -461,6 +463,92 @@ Total slides: [number]
 - Test all text lengths to ensure no overflow or overlap
 - Use bounding boxes to verify element spacing
 
+### Design Mistakes to Avoid
+
+**CRITICAL: These are examples of BAD design that must be avoided**
+
+**BAD - Cluttered layouts:**
+- Multiple cramped boxes with different sizes competing for attention
+- Too many sections on one slide (more than 3-4 content blocks)
+- Inconsistent box sizes and alignment creating visual chaos
+- Dense text blocks with no breathing room
+
+**BAD - Poor spacing and padding:**
+- Text touching or too close to box edges (less than 15pt padding)
+- Boxes placed too close together (less than 20pt gaps)
+- Uneven margins creating lopsided appearance
+- Content extending to slide edges without margins
+
+**BAD - Inconsistent formatting:**
+- Different header styles on the same slide (varying colors, sizes, positions)
+- Mixed bullet styles and indentation levels
+- Inconsistent font sizes for similar content types
+- Random color usage without purpose or hierarchy
+
+**BAD - Hard-to-read text:**
+- Small font sizes (below 18pt for body text)
+- Poor contrast (light text on light background, dark on dark)
+- Too many font styles on one slide (more than 2-3)
+- All-caps body text (hard to read in paragraphs)
+
+**BAD - Overuse of boxes and borders:**
+- Every element wrapped in a box or border
+- Heavy borders (more than 3pt) on multiple elements
+- Boxes within boxes creating nested complexity
+- Unnecessary dividers and lines cluttering the space
+
+**BAD - Information overload:**
+- More than 7 bullet points on a single slide
+- Paragraphs of text instead of concise bullets
+- Multiple data points without clear hierarchy
+- Trying to fit too much content on one slide
+
+**GOOD - DO THIS INSTEAD:**
+- **One main idea per slide** - Split complex topics across multiple slides
+- **Generous white space** - Let content breathe with 40-60pt margins
+- **Consistent hierarchy** - Same style for all headers, all bullets, all captions
+- **Clear focal point** - One primary element that draws the eye first
+- **Minimal boxes** - Use color blocks or white space instead of borders
+- **Large, readable text** - 24pt minimum for body, 36pt+ for headers
+- **3-5 bullets maximum** - If you need more, create another slide
+
+### Examples of Good Design Principles
+
+**Clean, professional layouts:**
+- Single content area with clear focus
+- Consistent slide structure throughout presentation
+- Balanced use of text and visual elements
+- Professional color schemes with 2-3 main colors
+- Ample padding around all content (40-60pt margins)
+
+**Modern typography:**
+- Large, bold headlines (36-48pt)
+- Readable body text (20-24pt minimum)
+- Consistent font pairing (one for headers, one for body)
+- Sufficient line spacing (1.2-1.5x)
+- Strategic use of bold/color for emphasis
+
+**Effective visual hierarchy:**
+- Clear title at top of each slide
+- Logical content flow (top to bottom, left to right)
+- Visual separation between sections using space, not lines
+- Important information emphasized through size or color
+- Supporting details in smaller, secondary text
+
+**Smart use of color:**
+- Consistent brand colors throughout
+- High contrast between text and background
+- Color used purposefully (not decoratively)
+- Accent colors for highlights and emphasis
+- Neutral backgrounds (white, light gray, dark blue)
+
+**Data visualization best practices:**
+- Simple, clean charts without clutter
+- Clear labels and legends
+- One chart per slide for clarity
+- Color-coded data for easy understanding
+- Minimal gridlines and decorative elements
+
 ---
 
 ## PHASE 3: DESIGN & BRANDING DEFINITION
@@ -472,6 +560,8 @@ Total slides: [number]
 **DELIVERABLE:** In-memory TOON structure
 
 **EXECUTION:**
+
+**IMPORTANT:** Before starting, review both the "Design Mistakes to Avoid" and "Examples of Good Design Principles" sections in Design Principles & Guidelines. Your design must NOT exhibit any anti-patterns and SHOULD follow the good design principles.
 
 1. **Review branding requirements**
    - What: Check in-memory config for branding information
@@ -594,13 +684,14 @@ Total slides: [number]
 - Color blindness considerations: [notes]
 ```
 
-**SUCCESS CRITERIA:**
-- [ ] Design direction defined
-- [ ] Color palette selected (3-5 colors with hex codes)
-- [ ] Typography specified (web-safe fonts only)
-- [ ] Layout patterns defined for all slide types
-- [ ] Design system document created
-- [ ] Accessibility requirements addressed
+**TODO CHECKLIST:**
+- [ ] Research modern design trends using web search
+- [ ] Analyze topic for appropriate design direction
+- [ ] Select creative color palette (3-5 colors, avoid cookie-cutter)
+- [ ] Choose web-safe fonts with creative mixing
+- [ ] Define layout patterns for title/content/data/closing slides
+- [ ] Store design system in memory as TOON structure
+- [ ] Validate: Contrast ratio 4.5:1+, no generic styles
 
 **VALIDATION:** Review in-memory design system TOON structure and verify all sections are complete with specific values (no placeholders or "TBD"). Check that color contrast meets accessibility standards.
 
@@ -679,13 +770,13 @@ slide-1:
     description: What data to visualize
 ```
 
-**SUCCESS CRITERIA:**
-- [ ] Content created for all slides
-- [ ] Research findings integrated throughout
-- [ ] Content follows best practices (concise, specific, data-driven)
-- [ ] Tone matches audience and context
-- [ ] Content stored in memory as TOON structure
-- [ ] All slides have meaningful, non-placeholder content
+**TODO CHECKLIST:**
+- [ ] Create TOON structure for all slides
+- [ ] Generate content for each slide (titles, bullets, notes)
+- [ ] Integrate research findings into content
+- [ ] Apply content guidelines (3-5 bullets, specific data, clear language)
+- [ ] Store slide content in memory as TOON structure
+- [ ] Validate: No empty slides, no placeholders, data-driven content
 
 **VALIDATION:** Review in-memory TOON structure and verify:
 - Every slide has content (no empty slides)
@@ -869,12 +960,14 @@ slide-1:
    - How: Run: `python scripts/replace.py working.pptx replacement-text.json output.pptx`
    - Output: output.pptx with final content
 
-**SUCCESS CRITERIA:**
-- [ ] Appropriate workflow selected and executed
-- [ ] All content from in-memory TOON structures applied
-- [ ] All design from in-memory TOON structures applied
-- [ ] output.pptx file created
-- [ ] File opens without errors
+**TODO CHECKLIST:**
+- [ ] Choose workflow: Path A (from scratch) or Path B (with template)
+- [ ] Read html2pptx.md documentation (Path A) or template workflow (Path B)
+- [ ] Create HTML files or map template slides
+- [ ] Apply all content from in-memory TOON structures
+- [ ] Apply all design from in-memory TOON structures
+- [ ] Generate output.pptx file
+- [ ] Validate: File opens without errors in PowerPoint/LibreOffice
 
 **VALIDATION:** Open output.pptx in PowerPoint/LibreOffice and verify it displays correctly without errors.
 
@@ -947,13 +1040,13 @@ slide-1:
    - How: Continue until validation-issues.md is empty or all issues are acceptable
    - Output: Final validated presentation
 
-**SUCCESS CRITERIA:**
-- [ ] Thumbnails generated
-- [ ] All slides inspected
-- [ ] No text cutoff or overlap
-- [ ] Good contrast on all slides (minimum 4.5:1 ratio)
-- [ ] Consistent spacing and alignment
-- [ ] Professional appearance
+**TODO CHECKLIST:**
+- [ ] Generate thumbnail grid of all slides
+- [ ] Review thumbnails for visual issues (text cutoff, overlap, contrast)
+- [ ] Document any issues found
+- [ ] Fix all identified issues by regenerating/editing
+- [ ] Repeat validation until all issues resolved
+- [ ] Validate: Professional appearance, no text overlap, consistent design and alignment
 
 **VALIDATION:** Review final thumbnails and confirm presentation meets quality standards. All critical issues resolved.
 
@@ -1040,10 +1133,11 @@ slide-1:
 - Practice presentation delivery
 ```
 
-**SUCCESS CRITERIA:**
-- [ ] All deliverables verified
-- [ ] Summary created
-- [ ] User informed of completion
-- [ ] Instructions provided
+**TODO CHECKLIST:**
+- [ ] Verify all deliverables exist (output.pptx, thumbnails, in-memory structures)
+- [ ] Create delivery summary with slide count and key features
+- [ ] Present completion message to user
+- [ ] Provide next steps instructions
+- [ ] Confirm user can open output.pptx successfully
 
 **VALIDATION:** User confirms receipt of output.pptx and can open it successfully.
