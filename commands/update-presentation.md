@@ -9,35 +9,7 @@ You are an expert presentation editor and content strategist. Your task is to up
 - **Visual Quality Control**: Ensuring updates maintain professional appearance and consistency
 - **Selective Updates**: Identifying and modifying only the necessary slides while preserving the rest
 
-You work methodically through each phase of presentation editing, producing documented outputs at each step. You ensure all updates are accurate, visually consistent, and aligned with the original presentation's design or new branding requirements.
-
----
-
-## OVERVIEW
-
-This command updates an existing PowerPoint presentation. You will:
-
-1. Collect parameters about what needs to be updated
-2. Analyze the existing presentation structure
-3. Identify which slides to update
-4. Conduct research for new content (if needed)
-5. Generate updated content
-6. Apply updates using OOXML editing workflow
-7. Validate the final output for quality
-
-**Input Options:**
-- Path to existing presentation (.pptx)
-- Slide selection (specific slides, ranges, or all slides)
-- Update type (content, design, or both)
-- Free text description of changes OR path to scope file (.txt or .md)
-
-**Optional Inputs:**
-- Branding guidelines (file or description)
-- New design requirements
-
-**Output:**
-- Updated PowerPoint presentation (.pptx)
-- Supporting documentation (update scope, research, content changes)
+You work methodically through each phase of presentation editing, keeping all intermediate data in memory as TOON structures. You ensure all updates are accurate, visually consistent, and aligned with the original presentation's design or new branding requirements.
 
 ---
 
@@ -392,8 +364,8 @@ Total slides to update: [count]
    - How: For each slide:
      * If content update: List what text/data to change
      * If design update: List what visual elements to change
-     * Reference research-summary.md for new content (if applicable)
-     * Reference update description from config
+     * Reference in-memory research summary for new content (if applicable)
+     * Reference update description from in-memory config
    - Output: Detailed change specification per slide
 
 3. **Store update plan in memory**
@@ -484,15 +456,15 @@ Total slides to update: [count]
 **EXECUTION:**
 
 1. **Create content structure**
-   - What: Set up JSON structure for all slides being updated
-   - How: Use slide list from update-plan.md, create entry for each slide
-   - Output: JSON skeleton with slide numbers
+   - What: Set up TOON structure for all slides being updated
+   - How: Use slide list from in-memory update plan, create entry for each slide
+   - Output: TOON skeleton with slide numbers
 
 2. **Generate updated content for each slide**
    - What: Write specific new content for every slide being updated
    - How: For each slide:
-     * Reference update-plan.md for what to change
-     * Reference research-summary.md for new data (if applicable)
+     * Reference in-memory update plan for what to change
+     * Reference in-memory research summary for new data (if applicable)
      * Write clear, concise text appropriate for slides
      * Use bullet points for lists (3-5 bullets maximum)
      * Include specific data points and numbers
@@ -560,7 +532,7 @@ slide-3:
 - Every slide to update has new content
 - Content is specific with actual data/text
 - No "TBD" or placeholder text
-- Content aligns with update-plan.md
+- Content aligns with in-memory update plan
 
 ---
 
@@ -701,7 +673,7 @@ slide-3:
 
 4. **Verify content accuracy**
    - What: Confirm all planned updates were applied
-   - How: For each slide in update-plan.md:
+   - How: For each slide in in-memory update plan:
      * Open output.pptx and navigate to the slide
      * Verify new content matches in-memory TOON structure
      * Check that all changes from update plan are present
@@ -912,26 +884,3 @@ slide-3:
 ```
 
 ---
-
-## APPENDIX C: TECHNICAL REFERENCE FILES
-
-For detailed technical workflows, refer to these files:
-
-- **ooxml.md**: Complete guide for Office Open XML editing
-- **Original create-powerpoint-presentation.md**: Reference for PPTX workflows
-
----
-
-## NOTES
-
-**Workflow Design:**
-- This workflow is designed to work with both low and high capability models
-- Follow phases sequentially for best results
-- Each phase produces a specific deliverable that feeds into the next phase
-
-**Best Practices:**
-- Save all intermediate files for transparency and debugging
-- Validate at each phase before proceeding
-- Always backup original presentation before updating
-- Test output.pptx thoroughly before replacing original file
-- Reference appendices for slide selection formats and XML structure

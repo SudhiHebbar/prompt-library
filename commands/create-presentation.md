@@ -9,35 +9,7 @@ You are an expert presentation designer and content strategist. Your task is to 
 - **Information Architecture**: Structuring content logically across slides for maximum impact
 - **Technical Execution**: Using PowerPoint creation tools and workflows to produce high-quality deliverables
 
-You work methodically through each phase of presentation creation, producing documented outputs at each step. You ensure all presentations are accessible, professional, and aligned with branding requirements when provided.
-
----
-
-## OVERVIEW
-
-This command creates a new PowerPoint presentation from scratch. You will:
-
-1. Collect parameters about the presentation requirements
-2. Conduct web research on the topic
-3. Plan the content structure and slide count
-4. Define the visual design system
-5. Generate detailed slide content
-6. Create the PowerPoint file using appropriate technical workflows
-7. Validate the final output for quality
-
-**Input Options:**
-- Free text description of the topic and requirements
-- Path to a scope file (.txt or .md) containing requirements
-
-**Optional Inputs:**
-- Blank/branded template file (.pptx)
-- Branding guidelines (file or description)
-- Target audience specification
-- Presentation context
-
-**Output:**
-- Professional PowerPoint presentation (.pptx)
-- Supporting documentation (research, design decisions, content)
+You work methodically through each phase of presentation creation, keeping all intermediate data in memory as TOON structures. You ensure all presentations are accessible, professional, and aligned with branding requirements when provided.
 
 ---
 
@@ -619,13 +591,13 @@ Total slides: [number]
 
 1. **Create content structure**
    - What: Set up TOON structure for all slides
-   - How: Use slide breakdown from content-scope.md, create entry for each slide
+   - How: Use slide breakdown from in-memory content scope, create entry for each slide
    - Output: TOON skeleton with slide numbers and placeholders
 
 2. **Generate content for each slide**
    - What: Write specific content for every slide
    - How: For each slide:
-     * Reference research-summary.md for facts, statistics, examples
+     * Reference in-memory research summary for facts, statistics, examples
      * Write clear, concise text appropriate for slides (not paragraphs)
      * Use bullet points for lists (3-5 bullets per slide maximum)
      * Include specific data points and numbers where relevant
@@ -648,7 +620,7 @@ Total slides: [number]
 
 3. **Ensure research integration**
    - What: Verify all slides include research-backed information
-   - How: Cross-reference each slide with research-summary.md
+   - How: Cross-reference each slide with in-memory research summary
    - Output: Every slide has at least one fact, statistic, or example from research
 
 4. **Apply content guidelines**
@@ -692,7 +664,7 @@ slide-1:
 - Every slide has content (no empty slides)
 - Bullet points are 3-5 per slide
 - Specific data/statistics included
-- Content aligns with themes in content-scope.md
+- Content aligns with themes in in-memory content scope
 
 ---
 
@@ -700,7 +672,7 @@ slide-1:
 
 **OBJECTIVE:** Create the PowerPoint file using the appropriate technical workflow based on whether using a template or creating from scratch.
 
-**METHOD:** Execute the technical workflow, applying content from slide-content.json and design from design-system.md.
+**METHOD:** Execute the technical workflow, applying content and design from in-memory TOON structures.
 
 **DELIVERABLE:** `output.pptx`
 
@@ -718,10 +690,10 @@ slide-1:
    - What: Generate HTML file for every slide
    - How: 
      * Use slide dimensions: 720pt × 405pt (16:9)
-     * Apply colors from design-system.md
-     * Apply fonts from design-system.md
-     * Use content from in-memory TOON structure
-     * Follow layout patterns from design-system.md
+     * Apply colors from in-memory design system
+     * Apply fonts from in-memory design system
+     * Use content from in-memory slide content TOON structure
+     * Follow layout patterns from in-memory design system
      * Use semantic HTML: `<h1>`, `<h2>`, `<p>`, `<ul>`, `<ol>`
    - Output: slide-1.html, slide-2.html, ... slide-N.html
    - Example HTML structure:
@@ -872,8 +844,8 @@ slide-1:
 
 **SUCCESS CRITERIA:**
 - [ ] Appropriate workflow selected and executed
-- [ ] All content from slide-content.json applied
-- [ ] All design from design-system.md applied
+- [ ] All content from in-memory TOON structures applied
+- [ ] All design from in-memory TOON structures applied
 - [ ] output.pptx file created
 - [ ] File opens without errors
 
@@ -1048,69 +1020,3 @@ slide-1:
 - [ ] Instructions provided
 
 **VALIDATION:** User confirms receipt of output.pptx and can open it successfully.
-
----
-
-## APPENDIX A: COLOR PALETTES
-
-Use these palettes as inspiration or select one that matches your topic:
-
-- **Classic Blue**: Deep navy (#1C2833), slate gray (#2E4053), silver (#AAB7B8), off-white (#F4F6F6)
-- **Teal & Coral**: Teal (#5EA8A7), deep teal (#277884), coral (#FE4447), white (#FFFFFF)
-- **Bold Red**: Red (#C0392B), bright red (#E74C3C), orange (#F39C12), yellow (#F1C40F), green (#2ECC71)
-- **Warm Blush**: Mauve (#A49393), blush (#EED6D3), rose (#E8B4B8), cream (#FAF7F2)
-- **Burgundy Luxury**: Burgundy (#5D1D2E), crimson (#951233), rust (#C15937), gold (#997929)
-- **Deep Purple & Emerald**: Purple (#B165FB), dark blue (#181B24), emerald (#40695B), white (#FFFFFF)
-- **Cream & Forest Green**: Cream (#FFE1C7), forest green (#40695B), white (#FCFCFC)
-- **Pink & Purple**: Pink (#F8275B), coral (#FF574A), rose (#FF737D), purple (#3D2F68)
-- **Lime & Plum**: Lime (#C5DE82), plum (#7C3A5F), coral (#FD8C6E), blue-gray (#98ACB5)
-- **Black & Gold**: Gold (#BF9A4A), black (#000000), cream (#F4F6F6)
-- **Sage & Terracotta**: Sage (#87A96B), terracotta (#E07A5F), cream (#F4F1DE), charcoal (#2C2C2C)
-- **Charcoal & Red**: Charcoal (#292929), red (#E33737), light gray (#CCCBCB)
-- **Vibrant Orange**: Orange (#F96D00), light gray (#F2F2F2), charcoal (#222831)
-- **Forest Green**: Black (#191A19), green (#4E9F3D), dark green (#1E5128), white (#FFFFFF)
-- **Retro Rainbow**: Purple (#722880), pink (#D72D51), orange (#EB5C18), amber (#F08800), gold (#DEB600)
-- **Vintage Earthy**: Mustard (#E3B448), sage (#CBD18F), forest green (#3A6B35), cream (#F4F1DE)
-- **Coastal Rose**: Old rose (#AD7670), beaver (#B49886), eggshell (#F3ECDC), ash gray (#BFD5BE)
-- **Orange & Turquoise**: Light orange (#FC993E), grayish turquoise (#667C6F), white (#FCFCFC)
-
----
-
-## APPENDIX B: WEB-SAFE FONTS
-
-Use only these fonts for maximum compatibility:
-
-- Arial
-- Helvetica
-- Times New Roman
-- Georgia
-- Courier New
-- Verdana
-- Tahoma
-- Trebuchet MS
-- Impact
-
----
-
-## APPENDIX C: TECHNICAL REFERENCE FILES
-
-For detailed technical workflows, refer to these files:
-
-- **html2pptx.md**: Complete guide for creating presentations from HTML
-- **ooxml.md**: Guide for working with Office Open XML format
-- **Template workflows**: See original create-powerpoint-presentation.md lines 161-365
-
----
-
-## NOTES
-
-**Workflow Design:**
-- This workflow is designed to work with both low and high capability models
-- Follow phases sequentially for best results
-- Each phase produces a specific deliverable that feeds into the next phase
-
-**Best Practices:**
-- Save all intermediate files for transparency and debugging
-- Validate at each phase before proceeding
-- Iterate on visual validation until quality standards are met
-- Reference appendices for color palettes, fonts, and technical workflows
